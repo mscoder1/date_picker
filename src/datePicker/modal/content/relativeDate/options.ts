@@ -1,0 +1,16 @@
+export const options = [
+    ['Seconds ago', 11],
+    ['Minutes ago', 221],
+    ['Hours ago', 342],
+    ['Days ago', 43],
+    ['Weeks ago', 55],
+    ['Months ago', 66],
+    ['Years ago', 31],
+    ['Seconds form now', 21],
+    ['Minutes form now', 41],
+    ['Hours form now',61],
+    ['Days form now', 81],
+    ['Weeks form now', 91],
+    ['Months form now', 111],
+    ['Years form now', 1233],
+]

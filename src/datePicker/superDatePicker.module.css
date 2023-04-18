@@ -1,0 +1,69 @@
+.sdpWrap {
+    width: 500px;
+    height: 40px;
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 35%;
+    background-color: #FBFCFD;
+    border: 1px solid #E9EDF2;
+}
+
+.label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 100%;
+    background-color: #e9edf2;
+}
+
+.tech {
+    background-color: red;
+    width: calc(100% + 34px);
+    position: absolute;
+    right: 100%;
+    top: 100%;
+}
+
+.datePick {
+    width: 220px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.datePickActive {
+    width: 220px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* добавляем позиционирование */
+  }
+  
+  .datePickActive::after {
+    content: '';
+    position: absolute; /* абсолютное позиционирование относительно родительского блока */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #016AB4;
+    transition: height 0.2s ease; /* добавляем анимацию */
+    height: 0; /* начальная высота полоски */
+  }
+  
+  .datePickActive:hover::after, 
+  .datePickActive:focus::after {
+    height: 3px; /* высота полоски при наведении или фокусировке */
+  }
+
+.iconBlock {
+    width: 36px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
