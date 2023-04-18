@@ -5,10 +5,10 @@ import styles from './modal.module.css'
 
 interface IModal {
     isActive: boolean,
-    children?: React.ReactNode
+    isStart: boolean,
 }
 
-const Modal = ({isActive, children}: IModal) => {
+const Modal = ({isActive, isStart}: IModal) => {
 
     const [absolute, setAbsolute] = useState(false)
     const [relative, setRelative] = useState(false)
@@ -42,8 +42,8 @@ const Modal = ({isActive, children}: IModal) => {
             <button onClick={e => openRelative(e)} className={relative ? styles.modalButtonActive : styles.modalButton} >Relative</button>
             <button onClick={e => openNow(e)} className={now ? styles.modalButtonActive : styles.modalButton} >Now</button>
         </div>
-        { now && <NowDate />}
-        { relative && <RelativeDate /> }
+        { now && <NowDate isStart={isStart} />}
+        { relative && <RelativeDate isStart={isStart} /> }
     </div>
   )
 }
