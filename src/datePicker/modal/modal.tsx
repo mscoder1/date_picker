@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import CalendarWrap from './content/absoluteDate/calendarWrap/calendarWrap'
 import NowDate from './content/nowDate/nowDate'
 import RelativeDate from './content/relativeDate/relativeDate'
 import styles from './modal.module.css'
@@ -44,6 +45,7 @@ const Modal = ({isActive, isStart}: IModal) => {
         </div>
         { now && <NowDate isStart={isStart} />}
         { relative && <RelativeDate isStart={isStart} /> }
+        { absolute && <CalendarWrap /> }
     </div>
   )
 }
