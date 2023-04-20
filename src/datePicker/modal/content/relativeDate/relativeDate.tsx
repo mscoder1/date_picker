@@ -64,6 +64,7 @@ const RelativeDate = ({isStart}: IRelativeDate) => {
                 onChange={e => setValue(e.target.value)}
                 type="number"
                 step="1"
+                min="0"
             />
             <select
                 className={styles.relativeDateSelect}
