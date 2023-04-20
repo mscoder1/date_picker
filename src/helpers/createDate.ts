@@ -12,7 +12,7 @@ export const createDate = (params?:ICreateDate) => {
     const day = params?.date ?? new Date()
     const dayNumber = day.getDate()
     const exactDay = day.toLocaleDateString(validLocale, {weekday: 'long'})
-    const dayNumberInWeek = day.getDate() + 1
+    const dayNumberInWeek = day.getDay() + 1
     const dayShort = day.toLocaleDateString(validLocale, {weekday: 'short'})
     const year = day.getFullYear()
     const yearShort = day.toLocaleDateString(validLocale, {year: '2-digit'})

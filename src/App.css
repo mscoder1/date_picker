@@ -3,3 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --primary: #015C9B;
+  --on_primary: #FFFFFF;
+  --secondary: #E6F0F8;
+  --secondary_hover: #a5d8ff;
+  --secondary-light: #FBFCFD;
+  --success: #a5f6b2;
+  --error: #ffa4aa;
+}

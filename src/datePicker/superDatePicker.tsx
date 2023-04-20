@@ -38,10 +38,19 @@ const SuperDatePicker = () => {
     setModalStart(false);
   };
 
+  const checkIsDatesAreValid = () => {
+    if(data.start < data.end) {
+      return true
+    } else {
+      return false
+    }
+  }
+//styles.sdpWrap
+// styles.label
   return (
     <DataContext.Provider value={{setData}}>
       <div className={styles.sdpWrap}>
-        <label className={styles.label}>Dates</label>
+        <label className={(data.start && data.end) ? checkIsDatesAreValid() ? styles.labelValid : styles.labelInvalid : styles.label}>Dates</label>
         <div
           className={modalStart ? styles.datePickActive : styles.datePick}
           onClick={() => openStart()}

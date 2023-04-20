@@ -45,7 +45,7 @@ const Modal = ({isActive, isStart}: IModal) => {
         </div>
         { now && <NowDate isStart={isStart} />}
         { relative && <RelativeDate isStart={isStart} /> }
-        { absolute && <CalendarWrap /> }
+        { absolute && <CalendarWrap isStart={isStart} /> }
     </div>
   )
 }
