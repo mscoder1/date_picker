@@ -1,7 +1,7 @@
 import styles from "./superDatePicker.module.css";
 import { FiArrowRight } from "react-icons/fi";
 import Modal from "./modal/modal";
-import { createContext, Dispatch, SetStateAction, useContext, useState } from "react";
+import { createContext, Dispatch, SetStateAction, useContext, useEffect, useState } from "react";
 import NowDate from "./modal/content/nowDate/nowDate";
 
 interface IDataContext {
@@ -20,6 +20,8 @@ export const DataContext = createContext<IDataContext>({
 const SuperDatePicker = () => {
   const [modalStart, setModalStart] = useState(false);
   const [modalEnd, setModalEnd] = useState(false);
+
+  const [isValid, setIsValid] = useState(false)
 
   const [data, setData] = useState({
     start: "",
@@ -40,17 +42,20 @@ const SuperDatePicker = () => {
 
   const checkIsDatesAreValid = () => {
     if(data.start < data.end) {
-      return true
+      return setIsValid(true)
     } else {
-      return false
+      return setIsValid(false)
     }
   }
-//styles.sdpWrap
-// styles.label
+
+  useEffect(() => {
+    checkIsDatesAreValid()
+  }, [data])
+
   return (
     <DataContext.Provider value={{setData}}>
       <div className={styles.sdpWrap}>
-        <label className={(data.start && data.end) ? checkIsDatesAreValid() ? styles.labelValid : styles.labelInvalid : styles.label}>Dates</label>
+        <label className={(data.start && data.end) ? isValid ? styles.labelValid : styles.labelInvalid : styles.label}>Dates</label>
         <div
           className={modalStart ? styles.datePickActive : styles.datePick}
           onClick={() => openStart()}
